@@ -547,6 +547,12 @@ form{
 
 	.about-img{
 		padding-top: 50px;
+		width: 50%;
+		order: 2;
+	}
+
+	.video{
+		padding-top: 50px;
 		width: 100%;
 		order: 2;
 	}
