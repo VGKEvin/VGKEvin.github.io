@@ -171,6 +171,45 @@ p{
 	width: 500px;
 }
 
+.slide-frame {
+    width: 500px;
+    height: auto;
+    margin: 50px auto 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide-frame ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 1000%; /* Ajusta esto según el número de imágenes */
+    animation: slide s infinite alternate ease-in-out;
+}
+
+.slide-frame li {
+    list-style: none;
+    width: 100%; /* Cada imagen debe ocupar el 100% del contenedor */
+}
+
+.slide-frame img {
+    width: 100%; /* Las imágenes deben ocupar el ancho del contenedor del slider */
+}
+
+@keyframes slide {
+    0% { margin-left: 0%; }
+    10% { margin-left: 0%; }
+    20% { margin-left: -100%; }
+    30% { margin-left: -100%; }
+    40% { margin-left: -200%; }
+    50% { margin-left: -200%; }
+    60% { margin-left: -300%; }
+    70% { margin-left: -300%; }
+    80% { margin-left: -400%; }
+    90% { margin-left: -400%; }
+    100% { margin-left: -500%; } /* Ajustado para cubrir el ancho total */
+}
+
 .about-txt{
 	width: 50%;
 }
