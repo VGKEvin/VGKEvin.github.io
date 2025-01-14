@@ -1,0 +1,24 @@
+-classpath
+'C:/Users/Asus/.m2/repository/org/netbeans/external/AbsoluteLayout/RELEASE210/AbsoluteLayout-RELEASE210.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'21'
+-sourcepath
+'C:/Users/Asus/Documents/NetBeansProjects/_Proyectos/Proyecto_Listas/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/Asus/Documents/NetBeansProjects/_Proyectos/Proyecto_Listas/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Proyecto_Listas 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'Proyecto_Listas 1.0-SNAPSHOT API'

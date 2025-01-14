@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Estructura de Datos</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="icon" href="../img/Icono.png">
+
+	<!-- Boxicons -->
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+	<!-- Remix icons -->
+	<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Trocchi&display=swap" rel="stylesheet">
+
+	<!-- Animación -->
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+	<style>
+
+		/* General */
+		.info-sectionUser {
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    padding: 50px;
+		    gap: 20px;
+		    flex-wrap: wrap; /* Asegura apilamiento en pantallas pequeñas */
+		    text-align: justify; 
+		}
+
+		.contentUser {
+		    display: flex;
+		    align-items: center;
+		    max-width: 1200px;
+		    gap: 20px;
+		    flex-wrap: wrap; /* Permite que texto e imagen se apilen */
+		}
+
+		.text-containerUser {
+		    flex: 1;
+		    padding: 20px;
+		}
+
+		.image-containerUser {
+		    flex: 1;
+		    display: flex;
+		    justify-content: center;
+		    margin-bottom: 20px; /* Espaciado entre la imagen y el texto */
+		}
+
+		.image-containerUser img {
+		    max-width: 100%;
+		    height: auto;
+		    border-radius: 10px;
+		}
+
+		.reverse .contentUser {
+		    flex-direction: row-reverse;
+		}
+
+		h1, h2 {
+		    text-align: center;
+		    color: #fff;
+		    margin-bottom: 20px;
+		}
+
+		h1 {
+		    font-size: 2rem;
+		}
+
+		h2 {
+		    font-size: 1.8rem;
+		}
+
+		p {
+		    font-size: 1.2rem;
+		    line-height: 1.6rem;
+		    color: #ccc;
+		}
+
+		ul.listado {
+		    margin: 10px 0;
+		    padding-left: 20px;
+		    list-style-type: disc;
+		    color: #ccc;
+		}
+
+		ul.listado li {
+		    font-size: 1rem;
+		    line-height: 1.4rem;
+		}
+
+		body {
+		    background-color: #000;
+		    font-family: Arial, sans-serif;
+		}
+
+		/* Responsividad */
+		@media (max-width: 950px) {
+				.contentUser {
+						margin-top: 40px;
+		        flex-direction: column; 
+		        text-align: justify; 
+		    }
+
+		    /* Ajuste para .reverse */
+		    .reverse .contentUser {
+		        flex-direction: column; 
+		    }
+
+		    .image-containerUser {
+		        margin-bottom: 20px;
+		    }
+
+		    .text-containerUser {
+		        padding: 10px;
+		    }
+
+		    h1, h2 {
+		        font-size: 1.4rem;
+		    }
+
+		    p {
+		        font-size: 0.8rem;
+		        line-height: 1.2rem;
+		    }
+
+		    ul.listado li {
+		        font-size: 0.8rem;
+		        line-height: 1.1rem;
+		    }
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<!-- Header -->
+	<header>
+		<a href="../index.html" class="logo">
+				<img src="../img/logo.png">
+		</a>
+
+		<ul class="navlist" style="list-style: none;">
+			<li><a href="../index.html">Información</a></li>
+			<li><a href="https://www.instagram.com/elian.py" target="_blank">Contacto</a></li>
+			<li><a href="../reports/apidocs/index.html" target="_blank">Manual de Programador</a></li>
+			<li><a href="../user/indexUser.html" target="_blank">Manual de Usuario</a></li>
+		</ul>
+
+		<div class="right-content">
+			<a href="https://www.java.com/en/download/" target="_blank" class="nav-btn">Descargar JAVA</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+	</header>
+
+	<div class="icons">
+		<a href="https://www.facebook.com/mir.sistemas" target="_blank" data-aos="fade-in" data-aos-duration="1400" data-aos-delay="600"><i class="ri-facebook-fill"></i></a>
+		<a href="https://www.utmachala.edu.ec/portalwp/" target="_blank" data-aos="fade-in" data-aos-duration="1400" data-aos-delay="700"><i class="ri-school-line"></i></a>
+		<a href="https://www.instagram.com/utmach1969/" target="_blank" data-aos="fade-in" data-aos-duration="1400" data-aos-delay="800"><i class="ri-instagram-line"></i></a>
+	</div>
+
+	<div class="scroll"data-aos="zoom-out-down" data-aos-duration="1400" data-aos-delay="550">
+		<a href="#">
+			<i class="ri-scroll-to-bottom-line">Scroll Down</i>
+		</a>
+	</div>
+
+	<!-- Manual de Usuario -->
+	<section class="info-section" style="border-bottom: 1px solid #333;">
+	    <div class="content">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="zoom-in" data-aos-duration="1400">
+	            <img src="../img/Lista/Principal.png" alt="Principal">
+	        </div>
+	        <!-- Texto -->
+	        <div class="text-container" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h1>Pantalla Principal</h1>
+	            <p style="text-align: justify;">
+	                Al iniciar el programa se puede ver está interfaz principal con la cual se puede interactuar.
+	                En está imagen se tiene en detalle acerca de cada area. Es importante recalcar que el ingreso
+	                de datos es generico.
+	            </p>
+
+	            <p style="text-align: justify;">
+	                La funciones básicas dadas en este programa son en poder insertar, eliminar, modificar, buscar,
+	                ordenar, vaciar y tener información necesaria de la Lista. Dónde cada operación es verificada para
+	                evitar problemas en media ejecución.
+	            </p>
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Insertar -->
+	<section class="info-sectionUser reverse">
+	    <div class="contentUser">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="200">
+	            <img src="../img/Lista/Insertar.png" alt="Insertar">
+	        </div>
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h1>Insertar</h1>
+	            <p>
+	                Permite añadir nuevos datos a la lista de manera flexible, ya sea al inicio, al final o en una posición específica. La operación asegura que los datos ingresados sean válidos y evita errores como posiciones fuera de rango.
+	            </p>
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Insertar 1 -->
+	<section class="info-sectionUser reverse" style="margin-top: -50px;">
+	    <div class="contentUser">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="200">
+	            <img src="../img/Lista/Insert/1.png" alt="Principal">
+	        </div>
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h2>Inserción Exitosa</h2>
+	            <p style="text-align: justify;">
+	                El usuario selecciona la opción "Al Final" y agrega el valor 34.
+              </p>
+
+              <br>
+
+              <p style="text-align: justify;">
+	                Acciones:
+              </p>
+              <ul class="listado">
+								<li>Se ingresa el valor en el campo de texto.</li>
+								<li>Se selecciona la opción "Al Final".</li>
+								<li>Se presiona el botón "Insertar".</li>
+							</ul>
+
+							<br>
+
+							<p style="text-align: justify;">
+	                Resultado:
+              </p>
+              <ul class="listado">
+								<li>El dato 34 se inserta al final de la lista.</li>
+								<li>El nodo se representa con un rectángulo en la interfaz gráfica, conectado al nodo anterior por una flecha.</li>
+								<li>Un mensaje de confirmación aparece en el panel de mensajes, indicando que la operación fue exitosa.</li>
+							</ul>
+
+							<br>
+							<p style="text-align: justify;">
+	                Nota: Si la lista crece demasiado, se habilitará un scroll horizontal para navegar entre los nodos.
+              </p>
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Insertar 2 -->
+	<section class="info-sectionUser" style="margin-top: -50px;">
+	    <div class="contentUser">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="fade-right" data-aos-duration="1400" data-aos-delay="300">
+	            <img src="../img/Lista/Insert/2.png" alt="Principal">
+	        </div>
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h2>Inserción Fallida - Posición Inválida</h2>
+	            <p style="text-align: justify;">
+	                El usuario intenta insertar un valor en una posición inválida (por ejemplo, "L").
+              </p>
+
+              <br>
+
+              <p style="text-align: justify;">
+	                Acciones:
+              </p>
+              <ul class="listado">
+								<li>Se ingresa el valor en el campo de texto.</li>
+								<li>Se selecciona la opción "Por Posición".</li>
+								<li>En el campo de posición, se ingresa un valor no numérico ("L").</li>
+								<li>Se presiona el botón "Insertar".</li>
+							</ul>
+
+							<br>
+
+							<p style="text-align: justify;">
+	                Resultado:
+              </p>
+              <ul class="listado">
+								<li>La operación no se realiza.</li>
+								<li>Un mensaje de error aparece en el panel de mensajes, indicando que la posición ingresada es inválida.</li>
+							</ul>
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Insertar 3 -->
+	<section class="info-sectionUser reverse" style="margin-top: -50px; border-bottom: 1px solid #333;">
+	    <div class="contentUser">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="200">
+	            <img src="../img/Lista/Insert/3.png" alt="Principal">
+	        </div>
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h2>Inserción Fallida - Lista Vacía y Posición Inválida</h2>
+	            <p style="text-align: justify;">
+	                El usuario intenta insertar el valor 4 en la posición 8, pero la lista está vacía.
+              </p>
+
+              <br>
+
+              <p style="text-align: justify;">
+	                Acciones:
+              </p>
+              <ul class="listado">
+								<li>Se ingresa el valor 4 en el campo de texto.</li>
+								<li>Se selecciona la opción "Por Posición".</li>
+								<li>Se ingresa la posición 8.</li>
+								<li>Se presiona el botón "Insertar".</li>
+							</ul>
+
+							<br>
+
+							<p style="text-align: justify;">
+	                Resultado:
+              </p>
+              <ul class="listado">
+								<li>La operación no se realiza.</li>
+								<li>Un mensaje de error aparece en el panel de mensajes, indicando que la posición excede el tamaño actual de la lista (vacía).</li>
+							</ul>
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Eliminar -->
+	<section class="info-sectionUser">
+	    <div class="contentUser">
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h1>Eliminar</h1>
+	            <p>
+	                Permite borrar nodos de la lista por su dato o posición. La operación asegura que el dato exista o que la posición sea válida antes de realizar la eliminación.
+	            </p>
+	        </div>
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="200">
+	            <img src="../img/Lista/Eliminar.png" alt="Eliminar">
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Eliminar 1 -->
+	<section class="info-sectionUser reverse" style="margin-top: -50px;">
+	    <div class="contentUser">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="200">
+	            <img src="../img/Lista/Delete/1.png" alt="Principal">
+	        </div>
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h2>Eliminación por Dato Exitosa</h2>
+	            <p style="text-align: justify;">
+	                 El usuario elimina el nodo correspondiente al dato "34".
+              </p>
+
+              <br>
+
+              <p style="text-align: justify;">
+	                Acciones:
+              </p>
+              <ul class="listado">
+								<li>Se selecciona la opción "Por Dato".</li>
+								<li>Se ingresa el valor "34" en el campo de texto.</li>
+								<li>Se presiona el botón "Eliminar".</li>
+							</ul>
+
+							<br>
+
+							<p style="text-align: justify;">
+	                Resultado:
+              </p>
+              <ul class="listado">
+              	<li>Antes de la eliminación, el nodo se resalta en color rojo para indicar al usuario qué elemento se está eliminando.</li>
+								<li>El nodo con el dato "34" se elimina de la lista.</li>
+								<li>Un mensaje de confirmación aparece en el panel de mensajes, indicando que la operación fue exitosa.</li>
+							</ul>
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Eliminar 2 -->
+	<section class="info-sectionUser" style="margin-top: -50px; border-bottom: 1px solid #333;">
+	    <div class="contentUser">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="fade-right" data-aos-duration="1400" data-aos-delay="300">
+	            <img src="../img/Lista/Delete/2.png" alt="Principal">
+	        </div>
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h2>Eliminación por Dato Exitosa</h2>
+	            <p style="text-align: justify;">
+	                 El usuario elimina el nodo correspondiente al dato "34".
+              </p>
+
+              <br>
+
+              <p style="text-align: justify;">
+	                Acciones:
+              </p>
+              <ul class="listado">
+								<li>Se selecciona la opción "Por Posición".</li>
+								<li>Se ingresa el valor "4" en el campo de texto de posición.</li>
+								<li>Se presiona el botón "Eliminar".</li>
+							</ul>
+
+							<br>
+
+							<p style="text-align: justify;">
+	                Resultado:
+              </p>
+              <ul class="listado">
+              	<li>Antes de la eliminación, el nodo se resalta en color rojo para indicar al usuario qué elemento se está eliminando.</li>
+								<li>El nodo en la posición 4 (Ñ) se elimina de la Lista.</li>
+								<li>Un mensaje de confirmación aparece en el panel de mensajes, indicando que la operación fue exitosa.</li>
+							</ul>
+	        </div>
+	    </div>
+	</section>
+
+
+	<!-- Modificar -->
+	<section class="info-sectionUser reverse">
+	    <div class="contentUser">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="200">
+	            <img src="../img/Lista/Modificar.png" alt="Modificar">
+	        </div>
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h1>Modificar</h1>
+	            <p>
+	                Facilita la actualización de los datos existentes en la lista, ya sea identificándolos por su valor o por su posición. Resalta visualmente los cambios para confirmar la operación al usuario.
+	            </p>
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Modificar 1 -->
+	<section class="info-sectionUser reverse" style="margin-top: -50px;">
+	    <div class="contentUser">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="200">
+	            <img src="../img/Lista/Modi/1.png" alt="Principal">
+	        </div>
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h2>Modificación Exitosa - Por Dato</h2>
+	            <p style="text-align: justify;">
+	                 El usuario desea modificar un dato existente en la lista reemplazándolo por un nuevo valor. En este caso, el dato "Q" será modificado por el nuevo valor "12".
+              </p>
+
+              <br>
+
+              <p style="text-align: justify;">
+	                Acciones:
+              </p>
+              <ul class="listado">
+              	<li>Se selecciona la opción "Por Dato".</li>
+								<li>Se ingresa el dato a modificar ("Q") en el campo correspondiente.</li>
+								<li>Se ingresa el nuevo dato ("12") en el campo del nuevo valor.</li>
+								<li>Se presiona el botón "Modificar".</li>
+							</ul>
+
+							<br>
+
+							<p style="text-align: justify;">
+	                Resultado:
+              </p>
+              <ul class="listado">
+              	<li>El nodo que contiene el dato "Q" se resalta en color azul, indicando el dato seleccionado para la modificación.</li>
+								<li>El dato "Q" es reemplazado por el nuevo valor "12".</li>
+								<li>El nuevo nodo con el dato "12" se resalta en color verde para confirmar la operación.</li>
+								<li>Un mensaje en el panel de información confirma que la modificación fue realizada exitosamente.</li>
+							</ul>
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Modificar 2 -->
+	<section class="info-sectionUser" style="margin-top: -50px; border-bottom: 1px solid #333;">
+	    <div class="contentUser">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="fade-right" data-aos-duration="1400" data-aos-delay="300">
+	            <img src="../img/Lista/Modi/2.png" alt="Principal">
+	        </div>
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h2>Modificación Exitosa - Por Posición</h2>
+	            <p style="text-align: justify;">
+	                 El usuario desea modificar un dato existente en la lista utilizando su posición. En este caso, la posición "2" se selecciona para reemplazar el dato "?" por el nuevo valor "7".
+              </p>
+
+              <br>
+
+              <p style="text-align: justify;">
+	                Acciones:
+              </p>
+              <ul class="listado">
+								<li>Se selecciona la opción "Por Posición".</li>
+								<li>Se ingresa la posición ("2") en el campo correspondiente.</li>
+								<li>Se ingresa el nuevo dato ("7") en el campo del nuevo valor.</li>
+								<li>Se presiona el botón "Modificar".</li>
+							</ul>
+
+							<br>
+
+							<p style="text-align: justify;">
+	                Resultado:
+              </p>
+              <ul class="listado">
+              	<li>El nodo en la posición "2", que contiene el dato "?", se resalta en color azul, indicando la selección.</li>
+								<li>El dato en la posición seleccionada ("?") es reemplazado por el nuevo valor ("7").</li>
+								<li>El nuevo nodo con el dato "7" se resalta en color verde para confirmar la operación.</li>
+								<li>Un mensaje en el panel de información confirma que la modificación fue realizada exitosamente.</li>
+							</ul>
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Buscar -->
+	<section class="info-sectionUser">
+	    <div class="contentUser">
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h1>Buscar</h1>
+	            <p>
+	                Facilita localizar un dato en la lista, ya sea por su valor o por su posición. Resalta visualmente el nodo encontrado y muestra información detallada en el panel de mensajes.
+	            </p>
+	        </div>
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="200">
+	            <img src="../img/Lista/Buscar.png" alt="Buscar">
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Buscar 1 -->
+	<section class="info-sectionUser reverse" style="margin-top: -50px;">
+	    <div class="contentUser">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="200">
+	            <img src="../img/Lista/Search/1.png" alt="Principal">
+	        </div>
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h2>Búsqueda  Exitosa - Por Dato</h2>
+	            <p style="text-align: justify;">
+	                 El usuario desea buscar un dato específico dentro de la lista. En este caso, el dato a buscar es "6+".
+              </p>
+
+              <br>
+
+              <p style="text-align: justify;">
+	                Acciones:
+              </p>
+              <ul class="listado">
+              	<li>Se selecciona la opción "Por Dato" utilizando el radio botón correspondiente.</li>
+								<li>Se ingresa el dato a buscar ("6+") en el campo de texto.</li>
+								<li>Se presiona el botón "Buscar".</li>
+							</ul>
+
+							<br>
+
+							<p style="text-align: justify;">
+	                Resultado:
+              </p>
+              <ul class="listado">
+              	<li>El nodo que contiene el dato "6+" se resalta en color amarillo, indicando que el dato fue encontrado en la lista.</li>
+								<li>Un mensaje aparece en el panel de información confirmando que el dato fue encontrado y especificando que se encuentra en la posición 0.</li>
+							</ul>
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Buscar 2 -->
+	<section class="info-sectionUser" style="margin-top: -50px; border-bottom: 1px solid #333;">
+	    <div class="contentUser">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="fade-right" data-aos-duration="1400" data-aos-delay="300">
+	            <img src="../img/Lista/Modi/2.png" alt="Principal">
+	        </div>
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h2>Búsqueda  Exitosa - Por Posición</h2>
+	            <p style="text-align: justify;">
+	                 El usuario desea buscar un dato específico dentro de la lista utilizando su posición. En este caso, la posición seleccionada es "5".
+              </p>
+
+              <br>
+
+              <p style="text-align: justify;">
+	                Acciones:
+              </p>
+              <ul class="listado">
+								<li>Se selecciona la opción "Por Posición" utilizando el radio botón correspondiente.</li>
+								<li>Se ingresa la posición a buscar ("5") en el campo de texto.</li>
+								<li>Se presiona el botón "Buscar".</li>
+							</ul>
+
+							<br>
+
+							<p style="text-align: justify;">
+	                Resultado:
+              </p>
+              <ul class="listado">
+              	<li>El nodo en la posición "5" se resalta en color amarillo, indicando que el dato en esa posición fue encontrado exitosamente.</li>
+								<li>Un mensaje aparece en el panel de información confirmando que el dato fue encontrado.</li>
+							</ul>
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Ordenar -->
+	<section class="info-sectionUser reverse">
+	    <div class="contentUser">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="200">
+	            <img src="../img/Lista/Ordenar.png" alt="Ordenar">
+	        </div>
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h1>Ordenar</h1>
+	            <p>
+	                Reorganiza los datos de la lista en orden ascendente o descendente. La operación garantiza que la lista resultante sea completamente ordenada.
+	            </p>
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Ordenar 1 -->
+	<section class="info-section" style="margin-top: -50px;">
+	    <div class="content">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="zoom-in" data-aos-duration="1400">
+	            <img src="../img/Lista/Ord/1.png" alt="Principal">
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Ordenar 2 -->
+	<section class="info-section" style="margin-top: -50px; border-bottom: 1px solid #333;" >
+	    <div class="content">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="zoom-in" data-aos-duration="1400">
+	            <img src="../img/Lista/Ord/2.png" alt="Principal">
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Estado y Vaciar -->
+	<section class="info-sectionUser">
+	    <div class="contentUser">
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h1>Estado y Vaciar</h1>
+	            <p>
+	                Para el estado de la Lista, lo que hace es un resumen completo de la lista, incluyendo su nombre, los datos almacenados, el primer y último elemento, y el tamaño total.
+	            </p>
+	            <br>
+	            <p>
+	                En cambio para la operación de vaciar lo que hace es eliminar todos los elementos de la lista, devolviéndola a su estado inicial vacío y sin nodos.
+
+
+	            </p>
+	        </div>
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="200">
+	            <img src="../img/Lista/Mensajes.png" alt="Estado y Vaciar">
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Estado -->
+	<section class="info-sectionUser reverse" style="margin-top: -50px;">
+	    <div class="contentUser">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="200">
+	            <img src="../img/Lista/Messages/1.png" alt="Principal">
+	        </div>
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h2>Estado de la Lista</h2>
+	            <p style="text-align: justify;">
+	                 El usuario desea conocer información relevante sobre el estado actual de la lista.
+              </p>
+
+              <br>
+
+              <p style="text-align: justify;">
+	                Acciones:
+              </p>
+              <ul class="listado">
+              	<li>Se presiona el botón "Estado" en el panel de mensajes.</li>
+							</ul>
+
+							<br>
+
+							<p style="text-align: justify;">
+	                Resultado:
+              </p>
+              <ul class="listado">
+              	<li>Nombre de la lista.</li>
+								<li>Datos ingresados: Se muestran todos los elementos actuales de la lista.</li>
+								<li>Primer dato: El dato que se encuentra en la primera posición.</li>
+								<li>Último dato: El dato que se encuentra en la última posición.</li>
+								<li>Tamaño de la lista: Cantidad total de elementos almacenados.</li>
+							</ul>
+	        </div>
+	    </div>
+	</section>
+
+	<!-- Vaciar -->
+	<section class="info-sectionUser" style="margin-top: -50px; border-bottom: 1px solid #333;">
+	    <div class="contentUser">
+	        <!-- Imagen -->
+	        <div class="image-containerUser" data-aos="fade-right" data-aos-duration="1400" data-aos-delay="300">
+	            <img src="../img/Lista/Messages/2.png" alt="Principal">
+	        </div>
+	        <!-- Texto -->
+	        <div class="text-containerUser" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+	            <h2>Vaciar la Lista</h2>
+	            <p style="text-align: justify;">
+	                 El usuario desea eliminar todos los nodos de la lista, dejando la estructura vacía, como al inicio del programa.
+              </p>
+
+              <br>
+
+              <p style="text-align: justify;">
+	                Acciones:
+              </p>
+              <ul class="listado">
+								<li>Se presiona el botón "Vaciar" en el panel correspondiente.</li>
+							</ul>
+
+							<br>
+
+							<p style="text-align: justify;">
+	                Resultado:
+              </p>
+              <ul class="listado">
+              	<li>Todos los nodos de la lista son eliminados.</li>
+								<li>La representación gráfica de la lista muestra únicamente la referencia a null, indicando que la lista está vacía.</li>
+								<li>En el panel de mensajes se muestra una confirmación indicando que la lista ha sido vaciada exitosamente.</li>
+							</ul>
+	        </div>
+	    </div>
+	</section>
+
+	<footer id="Contacto" class="footer">
+
+			<div class="footer-copy">
+				
+				<p>
+  				Esta página web © ha sido desarrollada como parte de un proyecto de programación para la Universidad, con el objetivo de estudiar y presentar conceptos relacionados con estructuras de datos de forma práctica e interactiva.
+				</p>
+				<p>
+			    Parte de la información sobre los diferentes tipos de listas y estructuras de datos ha sido recopilada del siguiente sitio web: 
+			    <a style="color: #ae8957;" href="https://akcoding.com/dsa/introduction-to-data-structures/" target="_blank" rel="noopener noreferrer">akcoding.com</a>.
+				</p>
+				<p>
+			    Cualquier uso no autorizado de esta página o de su contenido para otros fines distintos al académico está estrictamente prohibido y será considerado una violación de los derechos de autor.
+				</p>
+
+			</div>
+
+		</div>
+
+	</footer>
+
+	<!-- Js link -->
+	<script src="../js/script.js"></script>
+	  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+    	offset: 1,
+    });
+  </script>
+
+</body>
+</html>

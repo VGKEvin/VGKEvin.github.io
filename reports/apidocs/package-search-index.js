@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"algoritmos"},{"l":"All Packages","u":"allpackages-index.html"},{"l":"entidades"},{"l":"interfaz"},{"l":"PlaceHolders"},{"l":"tadLista"}];updateSearchResults();
